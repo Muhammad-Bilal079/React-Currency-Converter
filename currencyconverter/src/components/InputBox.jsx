@@ -11,13 +11,17 @@ function InputBox({
     amountDisabled = false,
     currecyDisabled = false,
     className = "",
+    Bilal,
+    setBilal,
 }) {
 
     const amountInputId = useId()
    
 
     return (
+        
         <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
+        
             <div className="w-1/2">
                 <label htmlFor={amountInputId} className="text-black/40 mb-2 inline-block">
                     {label}
@@ -36,11 +40,14 @@ function InputBox({
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">
                 <p className="text-black/40 mb-2 w-full">Currency Type</p>
+              {  console.log("ad")}
                 <select
                     className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"
-                    value={selectCurrency}
+                    // value={selectCurrency}
+                    value={Bilal}
                     onChange={(e) =>{
-                        onCurrencyChange && onCurrencyChange(Number(e.target.value))
+                        // onCurrencyChange && onCurrencyChange(Number(e.target.value))
+                        setBilal(e.target.value)
                     }}
                     disabled= {currecyDisabled}
                 >
@@ -55,6 +62,7 @@ function InputBox({
                 </select>
             </div>
         </div>
+      
     );
 }
 
